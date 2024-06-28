@@ -11,6 +11,8 @@
     <script src="dashboard-mastors.js"></script>
     <!-- Include CountUp.js from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </head>
 
@@ -243,6 +245,42 @@
                     <span><img class="imgSetHeightAuto" src="icons/overview.svg" alt=""></span>
                     <h3>Analytics</h3>
                 </div>
+
+                <!-- GRAPH CHART LIBRARY -->
+                <div class="chart-graph">
+                    <!-- BUTTONS -->
+                    <div class="chart-buttons">
+                        <div class="chart-swap-button">
+                            <button class="chart-button">Today</button>
+                            <button class="chart-button">Week</button>
+                            <button class="chart-button">Month</button>
+                            <button class="chart-button purchase-help disabled-button">Year</button>
+                        </div>
+                        <!-- RIGHT 3 DOTS -->
+                        <div class="dot-button">
+                            <img src="icons/vertical-dots.svg" alt=""><span></span>
+                            <!-- ON CLICK -->
+                            <div class="dots-context-menu">
+                                <a id="capture" href="#">Screenshot</a>
+                                <a href="#">FB Share</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chartJS-canvases">
+                        <!-- TODAY -->
+                        <canvas id="todayChart" class="showDefault hide" style="width:100%;">
+                        </canvas>
+                        <!-- WEEK -->
+                        <canvas id="weekChart" class="hide" style="width:100%;">
+                        </canvas>
+                        <!-- MONTH -->
+                        <canvas id="monthChart" class="hide" style="width:100%;">
+                        </canvas>
+                        <!-- YEAR -->
+                        <canvas id="yearChart" class="hide" style="width:100%;">
+                        </canvas>
+                    </div>
+                </div>
             </div>
             <!----------------------------------
                     ANALYSIS END
@@ -260,8 +298,117 @@
                         <h3>Recent Post</h3>
                     </div>
                     <!-- TABLE -->
-                    <table class="dash-col-table">
-
+                    <table class="dash-sticky-table">
+                        <thead class="thead">
+                            <tr>
+                                <th>SL</th>
+                                <th>Post</th>
+                                <th>Published</th>
+                                <th>Writer</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <!-- ROW -->
+                            <tr>
+                                <td>1</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>2</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>3</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>4</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Lemon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>5</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>6</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>7</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>8</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>9</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>1</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <!-- 2st COLUMN -->
@@ -270,6 +417,119 @@
                         <span><img class="imgSetHeightAuto" src="icons/overview.svg" alt=""></span>
                         <h3>My Post</h3>
                     </div>
+                    <!-- TABLE -->
+                    <table class="dash-sticky-table">
+                        <thead class="thead">
+                            <tr>
+                                <th>SL</th>
+                                <th>Post</th>
+                                <th>Published</th>
+                                <th>Writer</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <!-- ROW -->
+                            <tr>
+                                <td>1</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>2</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>3</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>4</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Lemon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>5</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>6</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>7</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>8</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>9</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                            <!-- ROW -->
+                            <tr>
+                                <td>1</td>
+                                <td>The "Query Search on HTML Table" project is a powerful</td>
+                                <td class="published">
+                                    <span>15<sup>th</sup> Jan</span><br>
+                                    <span>4:21pm</span>
+                                </td>
+                                <td>Ripon Video</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
             </div>
@@ -285,5 +545,7 @@
 
 </body>
 <script src="dashboard-mastors.js"></script>
+<script>
+</script>
 
 </html>
