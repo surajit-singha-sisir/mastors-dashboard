@@ -72,12 +72,12 @@
 
 /* SHOW HIDE FOR JS */
 .show {
-    opacity: 1;
+    display: flex !important;
     transition: all 0.3s ease;
 }
 
 .hide {
-    opacity: 0;
+    display: none !important;
     transition: all 0.3s ease;
 }
 
@@ -187,6 +187,63 @@ li {
 .dashboard-padding {
     padding: 1rem;
 }
+
+.disabled-button {
+    color: var(--sub-font-color);
+    cursor: not-allowed !important;
+
+}
+
+.purchase-help {
+    position: relative;
+}
+
+.purchase-help::after {
+    content: '';
+    background-image: url(icons/dollar-icon.svg);
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.4rem;
+    right: 0.3rem;
+    position: absolute;
+    display: flex;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* CIRCLE ON HOVER */
+.dot-button {
+    display: flex;
+    position: relative;
+    height: 1.2rem;
+    margin-right: 1rem;
+}
+
+.dot-button img {
+    display: flex;
+    position: relative;
+    height: 1.2rem;
+    z-index: 2;
+}
+
+.dot-button span {
+    position: relative;
+}
+
+.dot-button span {
+    background-color: var(--sub-div-color);
+    border: 1px solid var(--border-color);
+    position: absolute;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+
 /* --------------------------------
         DEFAULT CLASSES END
 ---------------------------------*/
@@ -499,7 +556,7 @@ body {
 }
 
 .overview-naming h3 {
-    margin-top: -0.15rem;
+    margin-top: -0.1rem;
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -565,9 +622,11 @@ fieldset .legend-field button:hover {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .forPercentageSign {
     position: relative;
 }
+
 .forPercentageSign .percentageSign {
     position: absolute;
     top: 0.6rem;
@@ -590,35 +649,241 @@ fieldset .legend-field button:hover {
 -------------------------------*/
 .dashboard-analytics {
     display: flex;
+    flex-direction: column;
     margin: 1rem 0;
-    height: 20rem;
+    width: 100%;
+    height: auto;
     background-color: var(--div-color);
 }
 
+.dashboard-analytics .chart-graph {
+    width: inherit;
+    height: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-graph .chart-buttons {
+    position: relative;
+    width: inherit;
+    padding: 1rem 1rem 0 1rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chart-buttons .chart-swap-button {
+    width: inherit;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chart-buttons .chart-button {
+    background-color: var(--sub-div-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 4.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    margin-bottom: -1px;
+    transition: all 0.3s ease;
+}
+
+.chart-buttons .chart-button:hover {
+    background-color: var(--active-color);
+    transition: all 0.3s ease;
+}
+
+.chart-hover-active {
+    background-color: var(--active-color) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 3 DOTS */
+.chart-buttons .dot-button .dots-context-menu {
+    position: absolute;
+    right: 2.5rem;
+    top: -0.5rem;
+    background-color: var(--sub-div-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid var(--border-color);
+    font-size: var(--small-font);
+    display: none;
+}
+
+.chart-buttons .dot-button .dots-context-menu::before {
+    content: '';
+    position: absolute;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background-color: var(--border-color);
+    width: 0.9rem;
+    aspect-ratio: 1;
+    right: -0.9rem;
+}
+
+.chart-buttons .dot-button .dots-context-menu::after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background-color: var(--sub-div-color);
+    width: 0.8rem;
+    aspect-ratio: 1;
+    right: -0.8rem;
+}
+
+.dots-context-menu a {
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+
+/* CHART JS */
+.chartJS-canvases canvas {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.chartJS-canvases canvas.showDefault {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hide {
+    display: none !important;
+    transition: all 0.3s ease;
+}
 
 /*-------------------------------
         ANALYTICS END 
 -------------------------------*/
 
 /*-------------------------------
-        ANALYTICS END 
+          TABLE START
 -------------------------------*/
 .dashboard-recent-posts {
     display: flex;
     background-color: var(--div-color);
     justify-content: space-between;
+    gap: 1rem;
 }
+
 .dashboard-col {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     flex: 1;
 }
-.dashboard-col .dash-col-table {
+
+.dashboard-col table.dash-sticky-table {
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-sticky-table th,
+td {
+    text-align: center;
     border: 1px solid var(--border-color);
 }
+
+.dash-sticky-table .thead {
+    position: relative;
+    display: table-header-group;
+    width: 100%;
+}
+
+.dash-sticky-table .thead tr {
+    display: flex;
+    width: inherit;
+    padding-right: 0.2rem;
+}
+
+.dash-sticky-table .thead tr th:first-child {
+    width: 10%;
+}
+
+.dash-sticky-table .thead tr th:nth-child(2) {
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.dash-sticky-table .thead tr th:nth-child(3) {
+    width: 25%;
+}
+
+.dash-sticky-table .thead tr th:nth-child(4) {
+    width: 15%;
+}
+
+
+
+.dash-sticky-table .thead,
+.dash-sticky-table th {
+    background-color: var(--sub-div-color);
+}
+
+.dash-sticky-table .tbody tr td:first-child {
+    width: 10%;
+}
+
+.dash-sticky-table .tbody tr td:nth-child(2) {
+    width: 50%;
+}
+
+.dash-sticky-table .tbody tr td:nth-child(3) {
+    width: 25%;
+}
+
+.dash-sticky-table .tbody tr td:nth-child(4) {
+    width: 15%;
+}
+
+
+.dash-sticky-table tr:hover {
+    background-color: var(--div-color);
+}
+
+.dash-sticky-table td {
+    padding: 1rem 0;
+}
+
+.dash-sticky-table .published span:last-child {
+    color: var(--help-icon-color);
+}
+
+.dash-sticky-table .tbody {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    overflow-y: scroll;
+}
+
+.dash-sticky-table .tbody::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.3rem;
+}
+
+.dash-sticky-table .tbody::-webkit-scrollbar-thumb {
+    background-color: var(--border-lite-color);
+    border-radius: 1rem;
+}
+
+
+/* SCREENSHOT PREVIEW */
+
+
 /*-------------------------------
-        ANALYTICS END 
+           TABLE END 
 -------------------------------*/
 
 @media screen and (max-width: 1368px) {
@@ -626,10 +891,12 @@ fieldset .legend-field button:hover {
         width: 4rem;
     }
 }
+
 @media screen and (max-width: 1080px) {
     .dashboard-overview .overview-columns {
         grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
     }
+
     div.companyLogo .your-dashboard-logo h1 {
         display: none;
     }
@@ -639,17 +906,20 @@ fieldset .legend-field button:hover {
     .dashboard-grid {
         grid-template-columns: 10% 85%;
     }
+
     .dashboard-overview .overview-columns {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     }
+
     .dashboard-overview .dash-column fieldset {
         flex-direction: row;
     }
+
     .inner-dashboard .deshboard-right-icons {
         display: none;
     }
+
     .flexNav p {
         display: none;
     }
 }
-
