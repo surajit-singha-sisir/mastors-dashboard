@@ -10,10 +10,7 @@
     <!-- k2d font -->
     <link href='https://fonts.googleapis.com/css?family=K2D' rel='stylesheet'>
     <script src="dashboard-mastors.js"></script>
-    <!-- Include CountUp.js from CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="dashboard-addNews.js"></script>
 
 </head>
 
@@ -163,7 +160,7 @@
                         <div class="add-post-input-style add-post-caption">
                             <p>Caption</p>
                             <div class="add-post-caption-counter">
-                                <input type="text" placeholder="Type the title of the post">
+                                <input type="text" placeholder="Type the title of the post" maxlength="15">
                                 <span class="input-counter">15</span>
                             </div>
                         </div>
@@ -228,6 +225,7 @@
                             2nd Column START
                 ----------------------------------->
                 <div class="add-post-col-2">
+                    <!-- POSITION -->
                     <div class="option-bar-col-2">
                         <div class="add-post-name-container">
                             <input type="button" value="POSITION">
@@ -250,24 +248,36 @@
                     <div class="adjust-space"></div>
 
                     <!-- FORMAT -->
-                    <div class="option-bar-col-2">
+                    <div class="option-bar-col2">
                         <div class="add-post-name-container">
                             <input type="button" value="FORMAT">
                             <img src="icons/addPost/chevron-down.svg" alt="">
                         </div>
-                        <div class="option-list" title="FORMAT">
-                            <label for="option1" class="option">
-                                <input type="radio" name="option1" id="option1" value="Regular" checked> Regular
+                        <div class="option-list" title="POSITION">
+                            <label for="op-1" class="option">
+                                <input type="radio" name="op" id="op-1" value="Standard" checked> Standard
                             </label>
-                            <label for="option2" class="option">
-                                <input type="radio" name="option1" id="option2" value="Lead"> Lead
+                            <label for="op-2" class="option">
+                                <input type="radio" name="op" id="op-2" value="Gallery"> Gallery
                             </label>
-                            <label for="option3" class="option">
-                                <input type="radio" name="option1" id="option3" value="Top"> Top
+                            <label for="op-3" class="option">
+                                <input type="radio" name="op" id="op-3" value="Video"> Video
                             </label>
+                            <label for="op-4" class="option">
+                                <input type="radio" name="op" id="op-4" value="Audio"> Audio
+                            </label>
+                            <label for="op-5" class="option">
+                                <input type="radio" name="op" id="op-5" value="Quote"> Quote
+                            </label>
+                            <label for="op-6" class="option">
+                                <input type="radio" name="op" id="op-6" value="Link"> Link
+                            </label>
+                            <label for="op-7" class="option">
+                                <input type="radio" name="op" id="op-7" value="Short Story"> Short Story
+                            </label>
+
                         </div>
                     </div>
-
                     <!-- THUMBNAIL -->
                     <div class="option-bar-col-2">
                         <div class="add-post-name-container">
@@ -316,5 +326,6 @@
     </div>
 </body>
 <script src="dashboard-mastors.js"></script>
+<script src="dashboard-addNews.js"></script>
 
 </html>

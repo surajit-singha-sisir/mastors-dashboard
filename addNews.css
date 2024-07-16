@@ -13,7 +13,6 @@
 
 .add-post-col-2 {
     position: relative;
-    grid: 30%;
     display: flex;
     flex-direction: column;
 }

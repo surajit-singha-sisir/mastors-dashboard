@@ -81,6 +81,15 @@
     transition: all 0.3s ease;
 }
 
+.arrowStable {
+    transition: all 0.3s ease;
+}
+
+.arrowRotate {
+    rotate: -90deg;
+    transition: all 0.3s ease;
+}
+
 /* ICON SIZE */
 .icon-size {
     aspect-ratio: 1;
@@ -263,6 +272,7 @@ li {
 input {
     outline: none;
 }
+
 input:focus {
     outline-color: var(--active-color);
 }
@@ -273,9 +283,11 @@ input:focus {
     gap: 0.5rem;
     width: 100%;
 }
+
 .big-font {
     font-size: var(--big-font);
 }
+
 /* --------------------------------
         DEFAULT CLASSES END
 ---------------------------------*/
