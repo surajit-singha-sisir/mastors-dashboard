@@ -244,6 +244,38 @@ li {
     cursor: pointer;
 }
 
+.adjust-space {
+    margin: 1rem 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    outline: none;
+}
+input:focus {
+    outline-color: var(--active-color);
+}
+
+.dash-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+.big-font {
+    font-size: var(--big-font);
+}
 /* --------------------------------
         DEFAULT CLASSES END
 ---------------------------------*/

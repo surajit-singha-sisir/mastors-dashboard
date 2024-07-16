@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD DESIGN</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="addNews.css">
     <!-- k2d font -->
     <link href='https://fonts.googleapis.com/css?family=K2D' rel='stylesheet'>
     <script src="dashboard-mastors.js"></script>
@@ -134,41 +135,186 @@
                 DASHBOARD MAIN START
         ----------------------------------->
         <div class="dashboard-main">
-            <!----------------------------------
-                DASHBOARD OVERVIEW START
-            ----------------------------------->
+            <div class="add-post-2-col">
+                <!----------------------------------
+                        POST LEFT START
+                ----------------------------------->
+                <div class="add-post-col-1">
+                    <div class="dashboard-col">
+                        <div class="overview-naming">
+                            <span><img class="imgSetHeightAuto" src="icons/overview.svg" alt=""></span>
+                            <h3>Add Post</h3>
+                        </div>
+                    </div>
+                    <!-- TOP BOTTOM SPACE COVER -->
+                    <div class="adjust-space"></div>
 
-            <!----------------------------------
-                DASHBOARD OVERVIEW END
-            ----------------------------------->
+                    <!-- TITLE -->
+                    <div class="flex-col add-post-title add-post-input-style">
+                        <p>Post Title</p>
+                        <input type="text" placeholder="Type the title of the post">
+                    </div>
 
+                    <!-- TOP BOTTOM SPACE COVER -->
+                    <div class="adjust-space"></div>
 
-            <!----------------------------------
-                    ANALYSIS START
-            ----------------------------------->
-            
-            <!----------------------------------
-                    ANALYSIS END
-            ----------------------------------->
+                    <div class="flex-3col">
+                        <!-- COLUMN 1 -->
+                        <div class="add-post-input-style add-post-caption">
+                            <p>Caption</p>
+                            <div class="add-post-caption-counter">
+                                <input type="text" placeholder="Type the title of the post">
+                                <span class="input-counter">15</span>
+                            </div>
+                        </div>
+                        <!-- COLUMN 2 -->
+                        <div class="select-category">
+                            <div class="dash-flex big-font">
+                                <img src="icons/addPost/category-subcat.svg" alt="">
+                                <p>Category</p>
+                            </div>
+                            <div class="add-post-select-container">
+                                <select id="add-post-category">
+                                    <option value="" disabled selected>-- Select --</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="International">International</option>
+                                    <option value="National">National</option>
+                                    <option value="Religion">Religion</option>
+                                    <option value="Special">Special</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Portfolio">Portfolio</option>
+                                    <option value="Quote">Quote</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="International">International</option>
+                                    <option value="National">National</option>
+                                    <option value="Religion">Religion</option>
+                                    <option value="Special">Special</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Portfolio">Portfolio</option>
+                                    <option value="Quote">Quote</option>
+                                </select>
 
+                            </div>
+                        </div>
+                        <!-- COLUMN 3 -->
+                        <div class="select-sub-category">
+                            <div class="dash-flex big-font">
+                                <img src="icons/addPost/category-subcat.svg" alt="">
+                                <p>Sub Category</p>
+                            </div>
+                            <select name="add-post-category" id="add-post-category">
+                                <option value="" disabled selected>-- Select --</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="International">International</option>
+                                <option value="National">National</option>
+                                <option value="Religion">Religion</option>
+                                <option value="Special">Special</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Portfolio">Portfolio</option>
+                                <option value="Quote">Quote</option>
+                            </select>
 
-            <!----------------------------------
-                    RECENT POST START
-            ----------------------------------->
-            
-            <!----------------------------------
-                    RECENT POST END
-            ----------------------------------->
+                        </div>
+                    </div>
+                </div>
+                <!----------------------------------
+                            POST LEFT END
+                ----------------------------------->
 
+                <!----------------------------------
+                            2nd Column START
+                ----------------------------------->
+                <div class="add-post-col-2">
+                    <div class="option-bar-col-2">
+                        <div class="add-post-name-container">
+                            <input type="button" value="POSITION">
+                            <img src="icons/addPost/chevron-down.svg" alt="">
+                        </div>
+                        <div class="option-list" title="POSITION">
+                            <label for="option1" class="option">
+                                <input type="radio" name="option1" id="option1" value="Regular" checked> Regular
+                            </label>
+                            <label for="option2" class="option">
+                                <input type="radio" name="option1" id="option2" value="Lead"> Lead
+                            </label>
+                            <label for="option3" class="option">
+                                <input type="radio" name="option1" id="option3" value="Top"> Top
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- TOP BOTTOM SPACE COVER -->
+                    <div class="adjust-space"></div>
+
+                    <!-- FORMAT -->
+                    <div class="option-bar-col-2">
+                        <div class="add-post-name-container">
+                            <input type="button" value="FORMAT">
+                            <img src="icons/addPost/chevron-down.svg" alt="">
+                        </div>
+                        <div class="option-list" title="FORMAT">
+                            <label for="option1" class="option">
+                                <input type="radio" name="option1" id="option1" value="Regular" checked> Regular
+                            </label>
+                            <label for="option2" class="option">
+                                <input type="radio" name="option1" id="option2" value="Lead"> Lead
+                            </label>
+                            <label for="option3" class="option">
+                                <input type="radio" name="option1" id="option3" value="Top"> Top
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- THUMBNAIL -->
+                    <div class="option-bar-col-2">
+                        <div class="add-post-name-container">
+                            <input type="button" value="THUMBNAIL">
+                        </div>
+                        <div class="option-list" title="DRAG AND DROP IMAGE">
+                            <span>
+                                <label for="file-input" class="file-label">
+                                    <p>DRAG & DROP <br> or<br>UPLOAD</p>
+                                </label>
+                                <input id="file-input" type="file" class="file-input">
+                            </span>
+                        </div>
+                        <!-- TOP BOTTOM SPACE COVER -->
+                        <div class="adjust-space"></div>
+                        <div class="thumb-preview">
+                            <p>Preview</p>
+                            <!-- TOP BOTTOM SPACE COVER -->
+                            <div class="adjust-space border-bottom"></div>
+
+                            <div class="preview-img">
+                                <img src="https://surmakontho.com/media/news/1_18.webp" alt="">
+                            </div>
+
+                            <div class="thumb-details">
+                                <div>
+                                    <span>Image Size</span>
+                                    <span>Ratio</span>
+                                </div>
+                                <div>
+                                    <span>1920px x 1080px</span>
+                                    <span>16:9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----------------------------------
+                            2nd Column END
+                ----------------------------------->
+            </div>
+            <!----------------------------------
+                   DASHBOARD MAIN END
+            ----------------------------------->
         </div>
-        <!----------------------------------
-                DASHBOARD MAIN END
-        ----------------------------------->
     </div>
-
 </body>
 <script src="dashboard-mastors.js"></script>
-<script>
-</script>
 
 </html>

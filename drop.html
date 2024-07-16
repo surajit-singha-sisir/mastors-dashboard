@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .select-container {
+    position: relative;
+    width: 200px;
+  }
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow in Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    height: auto;
+    overflow-y: hidden;
+  }
+  .select-container::after {
+    content: '▼'; /* Add custom arrow */
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .select-container select {
+    display: block;
+    height: 2.5rem; /* Height for single item display */
+  }
+  .select-container select:focus {
+    height: auto;
+    max-height: 10rem; /* Allow to show up to 5 items */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  option {
+    padding: 0.5rem; /* Padding for options */
+  }
+</style>
+</head>
+<body>
+
+<div class="select-container">
+  <select name="add-post-category" id="add-post-category">
+    <option value="" disabled selected>-- Select --</option>
+    <option value="Sylhet">Sylhet</option>
+    <option value="Dhaka">Dhaka</option>
+    <option value="International">International</option>
+    <option value="National">National</option>
+    <option value="Religion">Religion</option>
+    <option value="Special">Special</option>
+    <option value="Sports">Sports</option>
+    <option value="Portfolio">Portfolio</option>
+    <option value="Quote">Quote</option>
+    <option value="Sylhet">Sylhet</option>
+    <option value="Dhaka">Dhaka</option>
+    <option value="International">International</option>
+    <option value="National">National</option>
+    <option value="Religion">Religion</option>
+    <option value="Special">Special</option>
+    <option value="Sports">Sports</option>
+    <option value="Portfolio">Portfolio</option>
+    <option value="Quote">Quote</option>
+  </select>
+</div>
+
+</body>
+</html>
