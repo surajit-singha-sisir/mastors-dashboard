@@ -1,3 +1,8 @@
+.animate-y-axis {
+    overflow: hidden;
+    height: 100%;
+    transition: height 0.2s ease-in-out;
+}
 .add-post-2-col {
     position: relative;
     display: grid;
@@ -114,6 +119,7 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
+    cursor: pointer;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -121,6 +127,7 @@
     background-color: transparent;
     border: none;
     color: var(--font-color);
+    cursor: pointer;
 }
 
 .option-list {
@@ -128,7 +135,8 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: var(--sub-div-color);
-    padding: 0.5rem;
+    padding: 0 0.5rem;
+    height: fit-content;
 }
 
 .option-list .option {
@@ -179,7 +187,7 @@
 
 .option-list p:first-child {
     font-size: var(--small-font);
-    padding: 2rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
@@ -266,6 +274,34 @@
     font-size: var(--small-font);
     padding-bottom: 0.6rem;
 }
+
+
+
+
+
+/* DRAG AND DROP */
+.drag-and-drop {
+    border: 1px dashed var(--border-color);
+    margin-top: 1rem;
+    min-height: 6rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--small-font);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.drag-and-drop:hover {
+    background-color: var(--link-color);
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+.drag-and-drop.dragging {
+    border-color: #03a2d3;
+    color: #2df8dd;
+}
+
 
 
 

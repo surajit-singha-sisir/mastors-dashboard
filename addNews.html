@@ -227,11 +227,11 @@
                 <div class="add-post-col-2">
                     <!-- POSITION -->
                     <div class="option-bar-col-2">
-                        <div class="add-post-name-container">
+                        <div class="add-post-name-container toggleButton">
                             <input type="button" value="POSITION">
-                            <img src="icons/addPost/chevron-down.svg" alt="">
+                            <img src="icons/addPost/chevron-down.svg" alt="" class="arrowStable">
                         </div>
-                        <div class="option-list" title="POSITION">
+                        <div class="option-list animate-y-axis" title="POSITION">
                             <label for="option1" class="option">
                                 <input type="radio" name="option1" id="option1" value="Regular" checked> Regular
                             </label>
@@ -244,16 +244,13 @@
                         </div>
                     </div>
 
-                    <!-- TOP BOTTOM SPACE COVER -->
-                    <div class="adjust-space"></div>
-
                     <!-- FORMAT -->
                     <div class="option-bar-col2">
-                        <div class="add-post-name-container">
+                        <div class="add-post-name-container toggleButton">
                             <input type="button" value="FORMAT">
-                            <img src="icons/addPost/chevron-down.svg" alt="">
+                            <img src="icons/addPost/chevron-down.svg" alt="" class="arrowStable">
                         </div>
-                        <div class="option-list" title="POSITION">
+                        <div class="option-list animate-y-axis" title="POSITION">
                             <label for="op-1" class="option">
                                 <input type="radio" name="op" id="op-1" value="Standard" checked> Standard
                             </label>
@@ -283,14 +280,14 @@
                         <div class="add-post-name-container">
                             <input type="button" value="THUMBNAIL">
                         </div>
-                        <div class="option-list" title="DRAG AND DROP IMAGE">
-                            <span>
-                                <label for="file-input" class="file-label">
-                                    <p>DRAG & DROP <br> or<br>UPLOAD</p>
-                                </label>
-                                <input id="file-input" type="file" class="file-input">
-                            </span>
+
+                        <div class="upload-file-container">
+                            <div id="drop-zone" class="drag-and-drop">
+                                Drag & Drop Files Here
+                            </div>
+                            <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="previewThumb()">
                         </div>
+
                         <!-- TOP BOTTOM SPACE COVER -->
                         <div class="adjust-space"></div>
                         <div class="thumb-preview">
@@ -299,7 +296,7 @@
                             <div class="adjust-space border-bottom"></div>
 
                             <div class="preview-img">
-                                <img src="https://surmakontho.com/media/news/1_18.webp" alt="">
+                                <img src="https://dummyimage.com/600x400" alt="">
                             </div>
 
                             <div class="thumb-details">
@@ -308,12 +305,13 @@
                                     <span>Ratio</span>
                                 </div>
                                 <div>
-                                    <span>1920px x 1080px</span>
-                                    <span>16:9</span>
+                                    <span id="image-size">1920px x 1080px</span>
+                                    <span id="image-ratio">16:9</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!----------------------------------
                             2nd Column END
